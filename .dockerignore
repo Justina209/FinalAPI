@@ -1,0 +1,21 @@
+#I gnore Python  cache files
+__pycache__/
+*.pyc
+
+
+#Ignore the environment files
+.venv
+*.env
+
+
+#ignore unecessary files
+first.py
+sepsis2.ipynb
+
+
+#ignore the readme file
+data/README.md
+
+
+#ignore the label encoder
+models/label_encoder.pkl
