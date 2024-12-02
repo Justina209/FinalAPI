@@ -10,14 +10,10 @@ app = FastAPI(
     description="Sepsis Prediction API",
 )
  
-Model_Path = {
- 
-    "DecisionTree":"models/Decision Tree_pipeline.pkl",
-    "RandomForest" : "models/Random Forest_pipeline.pkl",
-    "LogisticRegression":"models/Logistic Regression_pipeline.pkl",
-    "kNN":"models/kNN_pipeline.pkl"
-   
-}
+Model_Path = {"C:\Users\JUSTINA\Desktop\API\models\Logistic Regression_pipeline.pkl",
+"C:\Users\JUSTINA\Desktop\API\models\Random Forest_pipeline.pkl",
+"C:\Users\JUSTINA\Desktop\API\models\Decision Tree_pipeline.pkl",
+"C:\Users\JUSTINA\Desktop\API\models\kNN_pipeline.pkl"}
  
 #load model
 models = {}
@@ -78,6 +74,4 @@ async def predictor(model: str, file: UploadFile = File(...)):
     return results
  
 if __name__ == "__main__":
-    uvicorn.run("mlapp:app", reload=True)
-   
- 
+     uvicorn.run("mlapi:app", reload=True)
