@@ -98,7 +98,7 @@ Below are some screenshots of the app interface:
 
 ### Requirements:
 1. Python 3.7 or higher
-2. Libraries: `pandas`, `numpy`, `scikit-learn`, `matplotlib`, `seaborn`, `flask` (for deployment), `xgboost`, and others used for model building and deployment.
+2. Libraries: `pandas`, `numpy`, `scikit-learn`, `matplotlib`, `seaborn`, `flask` (for deployment), and others used for model building and deployment.
 
 ### Installation:
 To install the required libraries, run:
