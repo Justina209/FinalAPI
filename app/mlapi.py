@@ -6,14 +6,23 @@ import joblib
 import uvicorn
  
 app = FastAPI(
+    
     title="Sepsis Prediction API",
     description="Sepsis Prediction API",
 )
  
-Model_Path = {"C:\Users\JUSTINA\Desktop\API\models\Logistic Regression_pipeline.pkl",
-"C:\Users\JUSTINA\Desktop\API\models\Random Forest_pipeline.pkl",
-"C:\Users\JUSTINA\Desktop\API\models\Decision Tree_pipeline.pkl",
-"C:\Users\JUSTINA\Desktop\API\models\kNN_pipeline.pkl"}
+Model_Path = {
+    
+    "DecisionTree":"models/Decision Tree_pipeline.pkl",
+    "RandomForest" : "models/Random Forest_pipeline.pkl",
+    "LogisticRegression":"models/Logistic Regression_pipeline.pkl",
+    "kNN":"models/kNN_pipeline.pkl"
+    # "C:\Users\JUSTINA\Desktop\API\models\Logistic Regression_pipeline.pkl",
+    # "C:\Users\JUSTINA\Desktop\API\models\Random Forest_pipeline.pkl",
+    # "C:\Users\JUSTINA\Desktop\API\models\Decision Tree_pipeline.pkl",
+    # "C:\Users\JUSTINA\Desktop\API\models\kNN_pipeline.pkl"
+            
+}
  
 #load model
 models = {}
@@ -32,12 +41,10 @@ async def st_endpoint():
 async def predictor(model: str, file: UploadFile = File(...)):
     """
     accept a model
-    load a file
- 
-    return a json with the prediction for each row
+    load a file return a json with the prediction for each row
     """
  
-#loading csv file
+    #loading csv file
     try:
         data = pd.read_csv(file.file)
     except Exception as e:
